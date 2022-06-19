@@ -33,3 +33,7 @@ document.addEventListener('keydown', function (e) {
     closeModal();
   }
 });
+
+/////////////////////////////////////////////
+
+console.log(document.documentElement)
