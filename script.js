@@ -36,6 +36,7 @@ document.addEventListener('keydown', function (e) {
 
 /////////////////////////////////////////////
 
+// Selecting Elements
 console.log(document.documentElement)
 console.log(document.head)
 console.log(document.body)
@@ -48,3 +49,11 @@ console.log(allSelections)
 document.getElementById('section--1')
 const allButtons = document.getElementsByTagName('button')
 console.log(allButtons)
+
+console.log(document.getElementsByClassName('btn'))
+
+// Creating and Inserting Elements
+// Top way to create elements
+// .insertAdjacentHTML
+
+const message = document.createElement('div')
