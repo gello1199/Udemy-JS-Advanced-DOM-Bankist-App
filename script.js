@@ -41,7 +41,7 @@ console.log(document.documentElement)
 console.log(document.head)
 console.log(document.body)
 
-document.querySelector('.header')
+const header = document.querySelector('.header')
 const allSelections = document.querySelectorAll('.section')
 
 console.log(allSelections)
@@ -57,3 +57,8 @@ console.log(document.getElementsByClassName('btn'))
 // .insertAdjacentHTML
 
 const message = document.createElement('div')
+message.classList.add('cookie-message')
+// message.textContent = 'We use cookies for improved functionality.'
+message.innerHTML = 'We use cookies for improved functionality. <button class="btn btn--close-cookie">Got it!</button>'
+header.prepend(message)
+header.append(message)
