@@ -60,5 +60,16 @@ const message = document.createElement('div')
 message.classList.add('cookie-message')
 // message.textContent = 'We use cookies for improved functionality.'
 message.innerHTML = 'We use cookies for improved functionality. <button class="btn btn--close-cookie">Got it!</button>'
-header.prepend(message)
+// header.prepend(message)
 header.append(message)
+// header.append(message.cloneNode(true))
+
+// header.before(message)
+// header.after(message)
+
+// Delete Elements
+document.querySelector('.btn--close-cookie').addEventListener('click', function() {
+  message.remove()
+  // old way to remove is below
+  // message.parentElement.removeChild(message)
+})
