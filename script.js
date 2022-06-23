@@ -73,3 +73,11 @@ document.querySelector('.btn--close-cookie').addEventListener('click', function(
   // old way to remove is below
   // message.parentElement.removeChild(message)
 })
+
+// Styles
+message.style.backgroundColor = '#37383d'
+message.style.width = '120%'
+message.style.padding = '10px'
+
+console.log(message.style.height)
+console.log(message.style.backgroundColor)
