@@ -77,7 +77,21 @@ document.querySelector('.btn--close-cookie').addEventListener('click', function(
 // Styles
 message.style.backgroundColor = '#37383d'
 message.style.width = '120%'
-message.style.padding = '10px'
+// message.style.padding = '10px'
 
 console.log(message.style.height)
 console.log(message.style.backgroundColor)
+
+console.log(getComputedStyle(message).color)
+console.log(getComputedStyle(message).height)
+
+message.style.height = Number.parseFloat(getComputedStyle(message).height, 10) + 30 + 'px'
+
+console.log(getComputedStyle(message).height)
+
+document.documentElement.style.setProperty('--color-primary', 'orangered')
+
+// Attributes
+const logo = document.querySelector('.nav__logo')
+console.log(logo.alt)
+console.log(logo.src)
