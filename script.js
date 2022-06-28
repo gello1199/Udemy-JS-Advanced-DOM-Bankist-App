@@ -89,7 +89,7 @@ message.style.height = Number.parseFloat(getComputedStyle(message).height, 10) +
 
 console.log(getComputedStyle(message).height)
 
-document.documentElement.style.setProperty('--color-primary', 'orangered')
+// document.documentElement.style.setProperty('--color-primary', 'orangered')
 
 // Attributes
 const logo = document.querySelector('.nav__logo')
@@ -122,3 +122,21 @@ logo.classList.contains('c', 'j') // not includes like in arrays
 
 // Don't use! This will only give us 1 class and will over-ride
 // logo.className = 'jonas'
+
+const btnScrollTo = document.querySelector('.btn--scroll-to')
+const section1 = document.querySelector('#section--1')
+
+btnScrollTo.addEventListener('click', function(e) {
+  const s1coords = section1.getBoundingClientRect()
+  console.log(s1coords)
+
+  console.log(e.target.getBoundingClientRect())
+
+  console.log('Current scroll (X/Y)', window.pageXOffset, pageYOffset)
+
+  console.log('height/width viewport', document.documentElement.clientHeight, document.documentElement.clientWidth)
+
+  // scrolling
+  window.scrollTo(s1coords.left, s1coords.top)
+
+})
