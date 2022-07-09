@@ -90,6 +90,22 @@ document.querySelector('.nav__links').addEventListener('click', function(e) {
   }
 })
 
+// Tabbed Component
+const tabs = document.querySelectorAll('.operations__tab')
+const tabsContainer = document.querySelector('.operations__tab-container')
+const tabsContent = document.querySelectorAll('.operations__content')
+
+// Not good practice. It runs the callback function each time and slows down the page
+// tabs.forEach(t => t.addEventListener('click', () => {
+//   console.log('TAB')
+// }))
+
+// Instead, use event delegation
+tabsContainer.addEventListener('click', function(e) {
+  const clicked = e.target.closest('.operations__tab')
+  console.log(clicked)
+})
+
 /////////////////////////////////////////////
 
 // Selecting Elements
@@ -250,31 +266,31 @@ document.querySelector('.nav__links').addEventListener('click', function(e) {
 // })
 
 // DOM Traversing
-const h1 = document.querySelector('h1')
+// const h1 = document.querySelector('h1')
 
-// Going Downwards: child elements
-console.log(h1.querySelectorAll('.highlight'))
-console.log(h1.childNodes)
-console.log(h1.children)
-h1.firstElementChild.style.color = 'white'
-h1.lastElementChild.style.color = 'orangered'
+// // Going Downwards: child elements
+// console.log(h1.querySelectorAll('.highlight'))
+// console.log(h1.childNodes)
+// console.log(h1.children)
+// h1.firstElementChild.style.color = 'white'
+// h1.lastElementChild.style.color = 'orangered'
 
-// Going upwards: selecting parents
-console.log(h1.parentNode)
-console.log(h1.parentElement)
+// // Going upwards: selecting parents
+// console.log(h1.parentNode)
+// console.log(h1.parentElement)
 
-h1.closest('.header').style.background = 'var(--gradient-secondary)'
+// h1.closest('.header').style.background = 'var(--gradient-secondary)'
 
-h1.closest('h1').style.background = 'var(--gradient-primary)'
+// h1.closest('h1').style.background = 'var(--gradient-primary)'
 
-// Going sideways: Siblings
-console.log(h1.previousElementSibling)
-console.log(h1.nextElementSibling)
+// // Going sideways: Siblings
+// console.log(h1.previousElementSibling)
+// console.log(h1.nextElementSibling)
 
-console.log(h1.previousSibling)
-console.log(h1.nextSibling)
+// console.log(h1.previousSibling)
+// console.log(h1.nextSibling)
 
-console.log(h1.parentElement.children);
-[...h1.parentElement.children].forEach(function (el) {
-  if (el !== h1) el.style.transform = 'scale(0.5)';
-});
+// console.log(h1.parentElement.children);
+// [...h1.parentElement.children].forEach(function (el) {
+//   if (el !== h1) el.style.transform = 'scale(0.5)';
+// });
