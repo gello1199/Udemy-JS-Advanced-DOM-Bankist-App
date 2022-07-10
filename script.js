@@ -6,6 +6,10 @@ const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
 const btnScrollTo = document.querySelector('.btn--scroll-to')
 const section1 = document.querySelector('#section--1')
+const nav = document.querySelector('.nav')
+const tabs = document.querySelectorAll('.operations__tab')
+const tabsContainer = document.querySelector('.operations__tab-container')
+const tabsContent = document.querySelectorAll('.operations__content')
 
 ///////////////////////////////////////
 // Modal window
@@ -91,9 +95,6 @@ document.querySelector('.nav__links').addEventListener('click', function(e) {
 })
 
 // Tabbed Component
-const tabs = document.querySelectorAll('.operations__tab')
-const tabsContainer = document.querySelector('.operations__tab-container')
-const tabsContent = document.querySelectorAll('.operations__content')
 
 // Not good practice. It runs the callback function each time and slows down the page
 // tabs.forEach(t => t.addEventListener('click', () => {
@@ -122,6 +123,11 @@ tabsContainer.addEventListener('click', function(e) {
 
   document.querySelector(`.operations__content--${clicked.dataset.tab}`).classList.add('operations__content--active')
 
+})
+
+// Menu Fade Animation
+nav.addEventListener('mouseover', function(e) {
+  console.log('NAV')
 })
 
 /////////////////////////////////////////////
